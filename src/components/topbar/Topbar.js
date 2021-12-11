@@ -1,13 +1,18 @@
 import "./topbar.css";
 import { Search, Person, Chat, Notifications } from "@material-ui/icons";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
 
 export default function Topbar() {
+  const { user } = useContext(AuthContext);
+  
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
-        <Link to="/" style={{textDecoration:"none"}}>
-        <span className="logo">Together</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">Together</span>
         </Link>
       </div>
       <div className="topbarCenter">
@@ -38,7 +43,18 @@ export default function Topbar() {
             <span className="topbarIconBadge">1</span>
           </div>
         </div>
-        <img src="/assets/person/1.jpeg" alt="" className="topbarImg"/>
+        <Link to={`/profile/${user.username}`}>
+          <img
+            src={
+              "/assets/person/noavatar.jpeg"
+            }
+            alt=""
+            className="topbarImg"
+          />
+        </Link>
+        <button className="logout-button" onClick={()=>{
+                localStorage.clear();
+            }}>Logout</button>
       </div>
     </div>
   );

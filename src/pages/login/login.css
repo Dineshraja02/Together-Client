@@ -24,12 +24,18 @@
 .loginLogo {
   font-size: 50px;
   font-weight: 800;
-  color: #1775ee;
+  color: crimson;
   margin-bottom: 10px;
 }
 
 .loginDesc {
   font-size: 24px;
+}
+
+.loginDesc>span{
+  color: crimson;
+  font-weight: bolder;
+  font-size: 28px;
 }
 
 .loginBox{
@@ -58,16 +64,22 @@
     height: 50px;
     border-radius: 10px;
     border: none;
-    background-color: #1775ee;
+    background-color: crimson;
     color: white;
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
 }
 
+
+.loginButton:disabled{
+  cursor: not-allowed !important;
+}
+
+
 .loginForgot{
-    text-align: center;
-    color: #1775ee;
+   color: crimson;
+   text-align: center;
 }
 
 .loginRegisterButton{
@@ -78,7 +90,7 @@
     border: none;
     background-color: #42b72a;
     color: white;
-    font-size: 20px;
+    font-size: 15px !important;
     font-weight: 500;
     cursor: pointer;
 }
