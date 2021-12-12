@@ -19,7 +19,7 @@ export default function Post({ post }) {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`/users?userId=${post.userId}`);
+      const res = await axios.get(`https://together-social-media.herokuapp.com/api/users?userId=${post.userId}`);
       setUser(res.data);
     };
     fetchUser();
